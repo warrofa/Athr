@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'Theme/Colour_Theme/colors.dart';
 import 'Theme/font_theme/font_style.dart';
+import 'account_page.dart';
+import 'block_setting.dart';
 import 'components/logos.dart';
 import 'dashboard_page.dart';
 import 'signin_page.dart';
@@ -36,16 +38,19 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/splash': (BuildContext context) => const Splash(),
-          '/startpage': (BuildContext context) => const startPage(),
+          '/startpage': (BuildContext context) => const StartPage(),
           '/signin': (BuildContext context) => const SignInPage(),
           '/signup': (BuildContext context) => const SignUpPage(),
           '/dashboard': (BuildContext context) => const HomePage(),
+          '/blockSetting':(BuildContext context) => const BsettingPage(),
+          '/account':(BuildContext context) => const AccountPage(),
+          
         });
   }
 }
 
-class startPage extends StatelessWidget {
-  const startPage({super.key});
+class StartPage extends StatelessWidget {
+  const StartPage({super.key});
 
   @override
   Widget build(BuildContext context) {

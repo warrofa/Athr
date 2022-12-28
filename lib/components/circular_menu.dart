@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../Theme/Colour_Theme/colors.dart';
+import 'menu_icons.dart';
 
 class DarkCirleMenu extends StatelessWidget {
   const DarkCirleMenu({super.key});
@@ -24,28 +25,11 @@ class DarkCirleMenu extends StatelessWidget {
           borderRadius: BorderRadius.circular(100)),
       alignment: Alignment.topLeft,
       children: [
-        IconButton(
-          onPressed: null,
-          icon: Icon(
-            size: 30,
-            color: Colors.white,
-            Icons.account_circle_outlined,
-          ),
-        ),
+        IconAccount(),
         Transform.rotate(
             angle: 90 * 3.14159265359/ 180,
-            child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  size:30,
-                  Icons.tune_outlined,
-                  color: Colors.white,
-                ))),
-        Icon(
-          size: 30,
-          color: Colors.white,
-          Icons.logout_outlined,
-        ),
+            child: IconSetting()),
+        IconLogout(),
       ],
     );
   }
