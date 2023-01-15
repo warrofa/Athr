@@ -42,7 +42,7 @@ class _SignInPageState extends State<SignInPage> {
 
             const AuthDivider(),
             
-            AuthOptions(btnGoogleController: _btnGoogleController),
+            AuthOptions(btnGoogleController: _btnGoogleController, btnFacebookController: _btnFacebookController,),
 
             Container(
               margin: EdgeInsets.all(30),

@@ -104,7 +104,7 @@ class SignUpPage extends StatelessWidget {
                       )),
                 ),
                 AuthDivider(),
-                AuthOptions(btnGoogleController: _btnGoogleController),
+                AuthOptions(btnGoogleController: _btnGoogleController,btnFacebookController: _btnFacebookController,),
                 Align(alignment: Alignment.bottomCenter,
                   child: RichText(
                       text: TextSpan(children: [

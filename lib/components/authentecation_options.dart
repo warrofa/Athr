@@ -7,26 +7,18 @@ class AuthOptions extends StatelessWidget {
   const AuthOptions({
     Key? key,
     required RoundedLoadingButtonController btnGoogleController,
-  }) : _btnGoogleController = btnGoogleController, super(key: key);
+    required RoundedLoadingButtonController btnFacebookController,
+  }) : _btnGoogleController = btnGoogleController,_btnFacebookController = btnFacebookController, super(key: key);
 
   final RoundedLoadingButtonController _btnGoogleController;
+  final RoundedLoadingButtonController _btnFacebookController;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-            decoration: BoxDecoration(
-                
-                borderRadius: BorderRadius.circular(10),
-                color: Theme.of(context).primaryColor,),
-            child: Padding(
-              padding: const EdgeInsets.all(3),
-              child: IconButton(
-                  onPressed: () {},
-                  icon: FaIcon(FontAwesomeIcons.phone, color: Colors.white,)),
-            )),
+        FacebookAuth(btnFacebookController: _btnFacebookController),
 
         GoogleAuth(btnGoogleController: _btnGoogleController),
       ],
@@ -80,6 +72,26 @@ class GoogleAuth extends StatelessWidget {
     width: 60,
     height: 60,
     elevation: 1,
-    child: FaIcon(FontAwesomeIcons.google, color: Colors.white,));
+    child: FaIcon(FontAwesomeIcons.google, color: Colors.white,size: 30));
+  }
+}
+
+class FacebookAuth extends StatelessWidget {
+  const FacebookAuth({
+    Key? key,
+    required RoundedLoadingButtonController btnFacebookController,
+  }) : _btnFacebookController = btnFacebookController, super(key: key);
+
+  final RoundedLoadingButtonController _btnFacebookController;
+
+  @override
+  Widget build(BuildContext context) {
+    return RoundedLoadingButton(controller: _btnFacebookController, onPressed: (){}, 
+    borderRadius: 10,
+    color: Colors.blue,
+    width: 60,
+    height: 60,
+    elevation: 1,
+    child: FaIcon(FontAwesomeIcons.facebook, color: Colors.white,size: 40,));
   }
 }
