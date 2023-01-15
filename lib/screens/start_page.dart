@@ -1,51 +1,44 @@
 
 import 'package:flutter/material.dart';
-import 'Theme/Colour_Theme/colors.dart';
-import 'Theme/font_theme/font_style.dart';
+import '../services/sign_in_provider.dart';
+import '../themes/light_theme.dart';
 import 'account_page.dart';
 import 'block_setting.dart';
-import 'components/logos.dart';
+import '../components/logos.dart';
 import 'dashboard_page.dart';
 import 'signin_page.dart';
 import 'signup_page.dart';
 import 'splash.dart';
+import 'package:provider/provider.dart';
 
 
-final ThemeData _AthrTheme = _buildAthrTheme();
+//final ThemeData _AthrTheme = _buildAthrTheme();
 
-ThemeData _buildAthrTheme() {
-  final ThemeData base = ThemeData.light();
-  return base.copyWith(
-    colorScheme: base.colorScheme.copyWith(
-      primary: athrDarkblue,
-      onPrimary: athrWhite,
-      secondary: athrblue,
-      error: athrError,
-    ),
-    textTheme: getTextTheme(),
-  );
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: "Athr",
-        initialRoute: '/splash',
-        theme: _buildAthrTheme(),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          '/splash': (BuildContext context) => const Splash(),
-          '/startpage': (BuildContext context) => const StartPage(),
-          '/signin': (BuildContext context) => const SignInPage(),
-          '/signup': (BuildContext context) => const SignUpPage(),
-          '/dashboard': (BuildContext context) => const HomePage(),
-          '/blockSetting':(BuildContext context) => const BsettingPage(),
-          '/account':(BuildContext context) => const AccountPage(),
-          
-        });
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ((context) => SignInProvider())),],
+      child: MaterialApp(
+          title: "Athr",
+          initialRoute: '/splash',
+          theme: buildLightTheme,
+          debugShowCheckedModeBanner: false,
+          routes: {
+            '/splash': (BuildContext context) => const Splash(),
+            '/startpage': (BuildContext context) => const StartPage(),
+            '/signin': (BuildContext context) => const SignInPage(),
+            '/signup': (BuildContext context) => const SignUpPage(),
+            '/dashboard': (BuildContext context) => const HomePage(),
+            '/blockSetting':(BuildContext context) => const BsettingPage(),
+            '/account':(BuildContext context) => const AccountPage(),
+            
+          }),
+    );
   }
 }
 
@@ -106,7 +99,6 @@ class TopDesign extends StatelessWidget {
           width: deviceWidth,
           height: deviceHeight * 0.55,
           decoration: BoxDecoration(
-              color: athrDarkblue,
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(26))),
@@ -115,7 +107,6 @@ class TopDesign extends StatelessWidget {
             width: deviceWidth,
             height: deviceHeight * 0.48,
             decoration: BoxDecoration(
-                color: athrWhite,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(26)))),

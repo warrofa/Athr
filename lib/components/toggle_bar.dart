@@ -1,4 +1,4 @@
-import 'package:athr_app/Theme/colour_theme/colors.dart';
+
 import 'package:flutter/material.dart';
 
 class ToggleBarComponent extends StatefulWidget {
@@ -29,13 +29,13 @@ class _ToggleBarComponentState extends State<ToggleBarComponent>
             child: TabBar(
                 isScrollable: true,
                 labelPadding: const EdgeInsets.only(left: 31, right: 31),
-                labelColor: athrDarkblue,
+                //TODO add colour
                 controller: _tabController,
                 indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
-                    color: athrWhite,
+                    //TODO add colour
                     border: Border.all(
-                      color: athrDarkblue,
+                      //TODO add colour
                       width: 1.5,
                     )),
                 tabs: [Tab(text: "Feed"), Tab(text: "view")])),

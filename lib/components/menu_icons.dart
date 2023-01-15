@@ -1,4 +1,4 @@
-import 'package:athr_app/Theme/colour_theme/colors.dart';
+
 import 'package:flutter/material.dart';
 
 class IconSetting extends StatelessWidget {
