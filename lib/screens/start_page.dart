@@ -98,7 +98,7 @@ class TopDesign extends StatelessWidget {
         Container(
           width: deviceWidth,
           height: deviceHeight * 0.55,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(26))),
@@ -106,7 +106,7 @@ class TopDesign extends StatelessWidget {
         Container(
             width: deviceWidth,
             height: deviceHeight * 0.48,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(26)))),
@@ -129,7 +129,7 @@ class Btns extends StatelessWidget {
       children: [
         TextButton(onPressed: () {
          Navigator.pushNamedAndRemoveUntil(context, '/signin', (route) => false);
-        }, child: Text("Singin")),
+        }, child: const Text("Singin")),
         ElevatedButton(onPressed: () {Navigator.pushNamedAndRemoveUntil(context, '/signup', (route) => false);}, child: Text("Singup"))
       ],
     );

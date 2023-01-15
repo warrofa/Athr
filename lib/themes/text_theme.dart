@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: non_constant_identifier_names
 TextTheme text_Theme = getTextTheme();
 
 TextTheme getTextTheme() => const TextTheme(
