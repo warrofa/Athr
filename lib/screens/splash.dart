@@ -23,10 +23,8 @@ class _SplashState extends State<Splash> {
   }
 
   void _navigateToStartPage()async{
-    final sp = context.read<SignInProvider>();
     await Future.delayed(const Duration(milliseconds: 2500)); //splash screen will appear for 2.5 sec
-    // ignore: use_build_context_synchronously
-    sp.isSignedIn == false ? Navigator.pushNamedAndRemoveUntil(context, '/startpage', (route) => false) : Navigator.pushNamedAndRemoveUntil(context, '/dashboard', (route) => false);
+   Navigator.pushNamedAndRemoveUntil(context, '/authWrapper', (route) => false);
   }
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.width;

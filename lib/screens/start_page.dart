@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import '../services/auth_wrapper.dart';
 import '../services/sign_in_provider.dart';
 import '../themes/light_theme.dart';
 import 'account_page.dart';
@@ -9,7 +10,7 @@ import 'dashboard_page.dart';
 import 'signin_page.dart';
 import 'signup_page.dart';
 import 'splash.dart';
-import 'package:provider/provider.dart';
+
 
 
 //final ThemeData _AthrTheme = _buildAthrTheme();
@@ -20,10 +21,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: ((context) => SignInProvider())),],
-      child: MaterialApp(
+    return MaterialApp(
           title: "Athr",
           initialRoute: '/splash',
           theme: buildLightTheme,
@@ -31,14 +29,15 @@ class MyApp extends StatelessWidget {
           routes: {
             '/splash': (BuildContext context) => const Splash(),
             '/startpage': (BuildContext context) => const StartPage(),
+            '/authWrapper': (BuildContext context) => const AuthWrapper(),
             '/signin': (BuildContext context) => const SignInPage(),
             '/signup': (BuildContext context) => const SignUpPage(),
             '/dashboard': (BuildContext context) => const HomePage(),
             '/blockSetting':(BuildContext context) => const BsettingPage(),
             '/account':(BuildContext context) => const AccountPage(),
             
-          }),
-    );
+          });
+    
   }
 }
 
