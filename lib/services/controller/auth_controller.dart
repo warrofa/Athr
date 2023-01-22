@@ -9,4 +9,8 @@ class AuthController{
   void signInWithGoogle(){
     _authRepo.signInWithGoogle();
   }
+
+  void createUsername(){
+    
+  }
 }

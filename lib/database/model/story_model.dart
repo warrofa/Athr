@@ -2,7 +2,7 @@ import 'package:athr_app/database/model/user_model.dart';
 import 'package:meta/meta.dart';
 
 class Story{
-  final Member membber;
+  final MemberModel membber;
   final String imageUrl;
   final bool isViewed;
 

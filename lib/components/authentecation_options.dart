@@ -66,9 +66,8 @@ class GoogleAuthButton extends ConsumerWidget {
     required RoundedLoadingButtonController btnGoogleController,
   }) : _btnGoogleController = btnGoogleController, super(key: key);
 
-  int signInWithGoogle(WidgetRef ref){
+  void signInWithGoogle(WidgetRef ref){
     ref.read(AuthControllerProvider).signInWithGoogle();
-    return 1;
   }
 
   final RoundedLoadingButtonController _btnGoogleController;
@@ -79,7 +78,10 @@ class GoogleAuthButton extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: ElevatedButton(
-        onPressed: () => signInWithGoogle(ref), //onpressed takes in a function that returns a void function
+        onPressed: () => {
+          signInWithGoogle(ref)
+          
+          }, //onpressed takes in a function that returns a void function
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 13),
           child: Image.asset(
