@@ -1,4 +1,4 @@
-import 'package:athr_app/model/user_framework.dart';
+import 'package:athr_app/database/model/user_framework.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:logger/logger.dart';
 import 'package:meta/meta.dart';

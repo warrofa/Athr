@@ -7,7 +7,7 @@ import '../components/auth_top_bar.dart';
 import '../components/authentecation_options.dart';
 import '../components/custom_text_field.dart';
 import '../log/logging.dart';
-import '../model/user_model.dart';
+import '../database/model/user_model.dart';
 import '../themes/light_theme.dart';
 
 final log = logger;

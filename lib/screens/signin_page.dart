@@ -1,4 +1,4 @@
-import 'package:athr_app/services/sign_in_provider.dart';
+
 import 'package:athr_app/themes/light_theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final GlobalKey _scaffoldKey = GlobalKey<ScaffoldState>();
+  
   final RoundedLoadingButtonController _btnGoogleController =
       RoundedLoadingButtonController();
   final RoundedLoadingButtonController _btnFacebookController =
@@ -29,7 +29,6 @@ class _SignInPageState extends State<SignInPage> {
     final deviceWidth = MediaQuery.of(context).size.width;
     final deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      key: _scaffoldKey,
       body: SafeArea(
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -68,7 +67,7 @@ class _SignInPageState extends State<SignInPage> {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(onPressed: (){validateUser();}, child: Text("Log in")),
+              child: ElevatedButton(onPressed: (){}, child: Text("Log in")),
             ),
             const AuthDivider(),
             AuthOptions(
@@ -103,9 +102,4 @@ class _SignInPageState extends State<SignInPage> {
   }
 }
 
-validateUser()async {
-  final AuthServices _auth = AuthServices();
-  dynamic result = await _auth.signInAnon();
-  result ?? log.e("failed to sign in anonymoisly");
-  log.i("file: signin_page - ${result.userId}");
-}
+

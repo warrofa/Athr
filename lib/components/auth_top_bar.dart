@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../model/user_model.dart';
+import '../database/model/user_model.dart';
 import '../themes/light_theme.dart';
 
 class top_auth_bar extends StatelessWidget {

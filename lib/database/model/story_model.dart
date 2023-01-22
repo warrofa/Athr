@@ -1,4 +1,4 @@
-import 'package:athr_app/model/user_model.dart';
+import 'package:athr_app/database/model/user_model.dart';
 import 'package:meta/meta.dart';
 
 class Story{

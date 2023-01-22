@@ -1,5 +1,5 @@
 
-import 'package:athr_app/model/user_framework.dart';
+import 'package:athr_app/database/model/user_framework.dart';
 
 class lead implements UserFrame{
 

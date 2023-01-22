@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../components/logos.dart';
-import '../services/sign_in_provider.dart';
+
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

@@ -29,16 +29,17 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
   cloud_firestore: ^4.3.1
   cupertino_icons: ^1.0.2
   fab_circular_menu: ^1.0.2
-  firebase_auth: ^4.2.4
-  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.5  #so user may be signed in and authenticated
+  firebase_core: ^2.4.1  #connect flutter app to firebase
+  firebase_storage: ^11.0.10  
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.1.3  #manages state management
   font_awesome_flutter: ">= 4.7.0"
-  google_sign_in: ^5.4.2
+  google_sign_in: ^5.4.3
   logger: ^1.1.0
   provider: ^6.0.5
   rounded_loading_button: ^2.1.0
@@ -66,6 +67,7 @@ flutter:
     - assets/logoSymbol-removebg-preview.png
     - assets/LightSymbol.png
     - assets/DarkSymbol.png
+    - assets/GOOG.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

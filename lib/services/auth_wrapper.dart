@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../screens/start_page.dart';
 
-
+//listens for authentication changes
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
 
