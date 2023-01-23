@@ -67,7 +67,7 @@ class GoogleAuthButton extends ConsumerWidget {
   }) : _btnGoogleController = btnGoogleController, super(key: key);
 
   void signInWithGoogle(BuildContext context,WidgetRef ref){
-    ref.read(AuthControllerProvider).signInWithGoogle(context);
+    ref.read(authControllerProvider.notifier).signInWithGoogle(context);
   }
 
   final RoundedLoadingButtonController _btnGoogleController;

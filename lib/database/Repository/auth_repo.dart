@@ -12,7 +12,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import '../../Core/constants/firebase_constants.dart';
 import '../../Core/typedef.dart';
 
-final AuthRepoProvider = Provider(((ref) => AuthRepo(
+final authRepoProvider = Provider(((ref) => AuthRepo(
     firestore: ref.read(firestoreProvider),
     auth: ref.read(authProvider),
     googleSignIn: ref.read(googleSignInProvider))));
@@ -37,9 +37,7 @@ class AuthRepo {
       _firestore.collection(FirebaseConstants.membersCollection);
 
   FutureEither<MemberModel> signInWithGoogle() async {
-    //TODO: swap out with defined typedef
-    //TODO: remove late
-    late MemberModel memberModel;
+    MemberModel memberModel;
     try {
       final GoogleSignInAccount? googleuser = await _googleSignIn.signIn();
       final credential = GoogleAuthProvider.credential(
@@ -76,7 +74,6 @@ class AuthRepo {
 
       }else{
         memberModel = await getMemberData( userCredential.user!.uid).first;
-        //TODO: if not new user
       }
       
        return right(memberModel); //in the case of success this will be returned, type of success is defined in the typedef.dart file
