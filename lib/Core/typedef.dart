@@ -1,8 +1,9 @@
 
-import 'package:athr_app/database/model/model.dart';
 import 'package:fpdart/fpdart.dart';
 
-import 'google_auth_failure.dart';
+import 'error/email_auth_fialure.dart';
+import 'error/google_auth_fialure.dart';
+
 
 /*
   Fpdart aims to provide all the main types found in functional languages to dart. 
@@ -17,5 +18,6 @@ Used to handle errors (instead of Exceptions).
   R is the return type when the computation is successful.
  */
 
-typedef FutureEither<T> = Future<Either<Failure,T>>; //using fpdart we can define our own data types and functions interfaces
+typedef FutureEither<T> = Future<Either<Failure,T>>; //using fpdart and typedef we can define our own data types and functions interfaces
 typedef FutureVoid = FutureEither<void>; //in the case where succes will not return anything
+typedef FutureEitherAuth<T> = Future<Either<Failure,T>>; 

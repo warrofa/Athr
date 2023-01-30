@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-
-
 class Pallete {
   // Colors
   static const blackColor = Color.fromRGBO(1, 1, 1, 1); // primary color
-  static const greyColor = Color.fromRGBO(26, 39, 45, 1); // secondary color
+  static const greyColor = Color(0xff303030); // secondary color
   static const drawerColor = Color.fromRGBO(18, 18, 18, 1);
   static const whiteColor = Colors.white;
   static var redColor = Colors.red.shade500;
-  static var blueColor = Colors.blue.shade300;
+  static var blueColor = Color.fromARGB(255, 6, 32, 54);
 
   // Themes
   static var darkModeAppTheme = ThemeData.dark().copyWith(
